@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import TodoList, { TaskType } from './componets/TodoList';
+import TodoList, { TaskType } from './componets/TodoList/TodoList';
 import { v1 } from 'uuid'
-import AddItemForm from './componets/AddItemForm';
+import AddItemForm from './componets/AddItemForm/AddItemForm';
 import { Container } from '@mui/system';
 import { Grid, Paper } from '@mui/material';
 
@@ -39,8 +39,8 @@ function App() {
       { id: v1(), title: 'купить сливки', isDone: false }
     ],
     [todolistId2]: [
-      { id: v1(), title: 'сходить на тренировку', isDone: true },
-      { id: v1(), title: 'прочитать книгу', isDone: false }
+      { id: v1(), title: 'комитить каждый день', isDone: true },
+      { id: v1(), title: 'прочитать мастера и маргариту', isDone: false }
 
     ]
   })

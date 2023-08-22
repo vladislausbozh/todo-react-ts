@@ -1,0 +1,11 @@
+.item {
+   width: 380px;
+   height: 400px;
+   display: flex;
+   flex-direction: column;
+}
+
+ul {
+   flex-direction: column;
+   flex: 1;
+}

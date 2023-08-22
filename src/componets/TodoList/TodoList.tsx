@@ -1,12 +1,13 @@
 import CloseIcon from '@mui/icons-material/Close';
-import { ValuesFilterType } from "../App"
+import { ValuesFilterType } from "../../App"
 import Stack from '@mui/material/Stack';
-import AddItemForm from './AddItemForm';
-import EditableSpan from '../EditableSpan';
+import AddItemForm from '../AddItemForm/AddItemForm';
+import EditableSpan from '../EditetableSpan/EditableSpan';
 import React,{ ChangeEvent } from 'react';
 import { Button } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Checkbox from '@mui/material/Checkbox';
+import './TodoList.css'
 
 
 
@@ -55,7 +56,7 @@ function TodoList(props: PropsType) {
    }
 
    return (
-      <div>
+      <div className='item' >
          <h3>
             <EditableSpan title={props.title} onChenge ={ changeTodolistTitle } />
             <Button  onClick={removeTodoList}><DeleteIcon /></Button>
