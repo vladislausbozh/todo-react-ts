@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import TodoList, { TaskType } from './componets/TodoList/TodoList';
 import { v1 } from 'uuid'
 import AddItemForm from './componets/AddItemForm/AddItemForm';
 import { Container } from '@mui/system';
 import { Grid, Paper } from '@mui/material';
+
+
 
 
 
@@ -21,13 +23,18 @@ type TaskStateType = {
 
 function App() {
 
+  
+
+  
+
+
   let todolistId1 = v1()
   let todolistId2 = v1()
 
 
   let [todolists, setTodolists] = useState<Array<TodolistType>>([
-    { id: todolistId1, title: 'Покупки', filter: 'all' },
-    { id: todolistId2, title: 'Дела', filter: 'all' },
+    // { id: todolistId1, title: 'Покупки', filter: 'all' },
+    // { id: todolistId2, title: 'Дела', filter: 'all' },
   ])
 
 
@@ -44,7 +51,7 @@ function App() {
 
     ]
   })
-
+  console.log(todolists)
 
   const removeTasks = (id: string, todolistId: string) => {
     let tasks = tasksObj[todolistId];
@@ -120,16 +127,15 @@ function App() {
     }
   }
 
-
-
+ 
 
   return (
     <div className="App">
-      <Container fixed>
+      <Container fixed> 
         <Grid container style={{ padding:'15px'} }>
           <AddItemForm addItem={addTodolist} />
         </Grid>
-        <Grid container spacing={3}>
+        <Grid className='container'  container spacing={3}>
           {
             todolists.map((tl) => {
 
@@ -142,8 +148,8 @@ function App() {
               if (tl.filter === 'active') {
                 taskForTodolist = taskForTodolist.filter(t => t.isDone === false)
               }
-
-              return <Grid item className='item-task'>
+              
+              return <Grid item  >
                 <Paper style={{ padding:'10px'}}>
                   <TodoList
                     key={tl.id}

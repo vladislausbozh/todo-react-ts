@@ -1,11 +1,21 @@
-.item {
-   width: 380px;
-   height: 400px;
+.cart {
    display: flex;
    flex-direction: column;
+   height: 400px;
+   width: 320px;
+   
 }
 
+
+
 ul {
-   flex-direction: column;
-   flex: 1;
+   flex: 1 ;
+   overflow:auto ;
+}
+
+.item {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: max-content 1fr 70px;
+   padding-bottom: 10px;
 }

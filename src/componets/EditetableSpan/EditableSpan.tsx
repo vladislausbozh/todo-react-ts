@@ -1,4 +1,5 @@
 import React, { useState,ChangeEvent } from "react"
+import './EditebleSpan.css'
 
 type EditableTisleType = {
    title: string
@@ -26,7 +27,7 @@ const EditableSpan = (props: EditableTisleType) => {
 
    return editTitle 
       ? <input onBlur={activeViewTitle} onChange={onChangeTitle} value={textСhange} autoFocus />
-      : <span onDoubleClick={activeEditTitle}>{props.title}</span>
+      : <span className="itemText" onDoubleClick={activeEditTitle}>{props.title}</span>
 }
 
 export default EditableSpan;

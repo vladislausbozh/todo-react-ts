@@ -56,15 +56,16 @@ function TodoList(props: PropsType) {
    }
 
    return (
-      <div >
+      <div className='cart'>
          <h3>
+            
             <EditableSpan title={props.title} onChenge ={ changeTodolistTitle } />
             <Button  onClick={removeTodoList}><DeleteIcon /></Button>
          </h3>
          
          <AddItemForm  addItem={addTask} />
       
-         <ul style={{padding:"0"}}>
+         <ul  style={{padding:"0"}}>
             {
                props.tasks.map(t => {
                
@@ -78,7 +79,7 @@ function TodoList(props: PropsType) {
                      props.changeTaskTitle(t.id,newValue,props.id)
                   }
                
-                  return <div className='items' key={t.id}>
+                  return <div className='item' key={t.id}>
                      <Checkbox  defaultChecked color="success" checked={t.isDone} onChange={ onChengeStatus }/>
                      <EditableSpan title={t.title} onChenge={ onChengeTitle } />
                      <Button startIcon={<DeleteIcon />} onClick={onClickHendler}></Button>
