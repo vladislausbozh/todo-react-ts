@@ -1,4 +1,4 @@
-import CloseIcon from '@mui/icons-material/Close';
+
 import { ValuesFilterType } from "../../App"
 import Stack from '@mui/material/Stack';
 import AddItemForm from '../AddItemForm/AddItemForm';

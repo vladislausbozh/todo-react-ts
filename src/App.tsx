@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import './App.css';
 import TodoList, { TaskType } from './componets/TodoList/TodoList';
 import { v1 } from 'uuid'
 import AddItemForm from './componets/AddItemForm/AddItemForm';
 import { Container } from '@mui/system';
-import { Grid, Paper } from '@mui/material';
+import { AppBar, Grid, Paper } from '@mui/material';
+import ButtonAppBar from './componets/ButtonApp/ButtonApp';
 
 
 
@@ -33,8 +34,8 @@ function App() {
 
 
   let [todolists, setTodolists] = useState<Array<TodolistType>>([
-    // { id: todolistId1, title: 'Покупки', filter: 'all' },
-    // { id: todolistId2, title: 'Дела', filter: 'all' },
+    { id: todolistId1, title: 'Покупки', filter: 'all' },
+    { id: todolistId2, title: 'Дела', filter: 'all' },
   ])
 
 
@@ -51,7 +52,7 @@ function App() {
 
     ]
   })
-  console.log(todolists)
+  
 
   const removeTasks = (id: string, todolistId: string) => {
     let tasks = tasksObj[todolistId];
@@ -132,6 +133,7 @@ function App() {
   return (
     <div className="App">
       <Container fixed> 
+        <ButtonAppBar/>
         <Grid container style={{ padding:'15px'} }>
           <AddItemForm addItem={addTodolist} />
         </Grid>
