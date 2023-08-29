@@ -154,7 +154,7 @@ function App() {
                 taskForTodolist = taskForTodolist.filter(t => t.isDone === false)
               }
               
-              return <Grid item  >
+              return <Grid item xs={12} sm={10} md={4}  >
                 <Paper style={{ padding:'10px'}}>
                   <TodoList
                     key={tl.id}
@@ -176,7 +176,7 @@ function App() {
           }
         </Grid>
       </Container>
-      <Login />
+      
     </div>
   );
 
