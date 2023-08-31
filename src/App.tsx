@@ -7,7 +7,8 @@ import { Container } from '@mui/system';
 import { AppBar, Grid, Paper } from '@mui/material';
 import ButtonAppBar from './componets/ButtonApp/ButtonApp';
 import {  Routes, Route, Link } from 'react-router-dom';
-import Login  from './componets/Login/Login';
+import  Login  from './pages/Login';
+
 
 
 
@@ -137,7 +138,7 @@ function App() {
       <Container fixed> 
         <ButtonAppBar/>
         <Routes>
-          <Route path='/login'element={<Login/>}/>
+          <Route path='/login'element={<Login />}/>
         </Routes>
         <Grid container style={{ padding:'15px'} }>
           <AddItemForm addItem={addTodolist} />
