@@ -12,7 +12,7 @@ function Login() {
 
    return (
       <Container fixed>
-         reg
+         
       </Container>
 
    );

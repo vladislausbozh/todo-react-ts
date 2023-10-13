@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import './App.css';
 import TodoList, { TaskType } from './componets/TodoList/TodoList';
 import { v1 } from 'uuid'
@@ -27,9 +27,6 @@ type TaskStateType = {
 
 function App() {
 
-  
-
-  
 
 
   let todolistId1 = v1()
@@ -37,25 +34,23 @@ function App() {
 
 
   let [todolists, setTodolists] = useState<Array<TodolistType>>([
-    { id: todolistId1, title: 'Покупки', filter: 'all' },
-    { id: todolistId2, title: 'Дела', filter: 'all' },
+    
   ])
 
 
   let [tasksObj, setTasks] = useState<TaskStateType>({
     [todolistId1]: [
-      { id: v1(), title: 'купить молоко', isDone: true },
-      { id: v1(), title: 'купить хлеб', isDone: true },
-      { id: v1(), title: 'купить курицу', isDone: false },
-      { id: v1(), title: 'купить сливки', isDone: false }
+      
     ],
     [todolistId2]: [
-      { id: v1(), title: 'комитить каждый день', isDone: true },
-      { id: v1(), title: 'прочитать мастера и маргариту', isDone: false }
+      
 
     ]
   })
   
+  useEffect(()=> {
+    console.log('hello')
+  },[])
 
   const removeTasks = (id: string, todolistId: string) => {
     let tasks = tasksObj[todolistId];
